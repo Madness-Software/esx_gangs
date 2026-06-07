@@ -124,8 +124,8 @@ local function OpenMenu(menu, params)
                   elements = list
               }, function(data, menu)
                 menu.close()
-                ESX.TriggerServerCallback('esx_gangs:spawnVehicle', function(result) 
-                  if (result) then 
+                ESX.TriggerServerCallback('esx_gangs:spawnVehicle', function(result)
+                  if (result and Config.Gangs[gang] ~= nil) then
                     local marker = Config.Gangs[gang].Markers.VehicleReturn
                     local location = Config.Gangs[gang].Markers.VehicleReturn.Location
                     local model = GetHashKey(data.current.value)
@@ -530,7 +530,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(0)
     local player = {}
     player.x, player.y, player.z = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
-    if (curGang ~= nil) then 
+    if (curGang ~= nil and Config.Gangs[curGang] ~= nil) then
       local gang_table = Config.Gangs[curGang].Markers
       local marker_list = {gang_table.Management, gang_table.VehicleSpawn, gang_table.VehicleReturn}
       local action_list = {"manage", "vehicle", "vehicle_return"}  

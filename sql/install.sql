@@ -1,3 +1,22 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.32-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.6.0.6765
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+
+-- Dumping structure for table esxlegacy_24bec1.gangs
 CREATE TABLE IF NOT EXISTS `gangs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -7,11 +26,14 @@ CREATE TABLE IF NOT EXISTS `gangs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
+-- Dumping data for table esxlegacy_24bec1.gangs: ~4 rows (approximately)
 INSERT INTO `gangs` (`id`, `name`, `label`, `inventory`, `leadership_rank`) VALUES
 	(1, 'woo', 'Woo', '{"dcash":0,"items":{"medikit":0,"meth_pooch":0,"bandage":0,"rolex":0,"diamond":0,"opium_pooch":0,"opium":0,"coke":0,"coke_pooch":0,"jewels":0,"meth":0},"cash":0}', 4),
 	(2, 'otf', 'OTF', '{"dcash":0,"items":{"medikit":0,"meth_pooch":0,"bandage":0,"rolex":0,"diamond":0,"opium_pooch":0,"opium":0,"coke":0,"coke_pooch":0,"jewels":0,"meth":0},"cash":0}', 4),
-	(3, 'gd', 'GD', '{"dcash":0,"items":{"medikit":0,"meth_pooch":0,"bandage":0,"rolex":0,"diamond":0,"opium_pooch":0,"opium":0,"coke":0,"coke_pooch":0,"jewels":0,"meth":0},"cash":0}', 4);
+	(3, 'gd', 'GD', '{"dcash":0,"items":{"medikit":0,"meth_pooch":0,"bandage":0,"rolex":0,"diamond":0,"opium_pooch":0,"opium":0,"coke":0,"coke_pooch":0,"jewels":0,"meth":0},"cash":0}', 4),
+	(4, 'godfather', 'Godfather', '{"dcash":0,"items":{"medikit":0,"meth_pooch":0,"bandage":0,"rolex":0,"diamond":0,"opium_pooch":0,"opium":0,"coke":0,"coke_pooch":0,"jewels":0,"meth":0},"cash":0}', 3);
 
+-- Dumping structure for table esxlegacy_24bec1.gang_ranks
 CREATE TABLE IF NOT EXISTS `gang_ranks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -22,12 +44,13 @@ CREATE TABLE IF NOT EXISTS `gang_ranks` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
+-- Dumping data for table esxlegacy_24bec1.gang_ranks: ~20 rows (approximately)
 INSERT INTO `gang_ranks` (`id`, `name`, `label`, `gang_name`, `ranking`, `vehicles`) VALUES
 	(1, 'recruit', 'Recruit', 'woo', 0, NULL),
 	(2, 'member', 'Member', 'woo', 1, NULL),
 	(3, 'shooter', 'Shooter', 'woo', 2, NULL),
 	(4, 'topshooter', 'Top Shooter', 'woo', 3, NULL),
-	(5, 'owner', 'Owner', 'otf', 4, NULL),
+	(5, 'owner', 'Owner', 'woo', 4, NULL),
 	(21, 'recruit', 'Recruit', 'otf', 0, NULL),
 	(22, 'member', 'Member', 'otf', 1, NULL),
 	(23, 'shooter', 'Shooter', 'otf', 2, NULL),
@@ -37,4 +60,15 @@ INSERT INTO `gang_ranks` (`id`, `name`, `label`, `gang_name`, `ranking`, `vehicl
 	(32, 'member', 'Member', 'gd', 1, NULL),
 	(33, 'shooter', 'Shooter', 'gd', 2, NULL),
 	(34, 'topshooter', 'Top Shooter', 'gd', 3, NULL),
-	(35, 'owner', 'Owner', 'gd', 4, NULL);
+	(35, 'owner', 'Owner', 'gd', 4, NULL),
+	(36, 'recruit', 'Recruit', 'godfather', 0, NULL),
+	(37, 'member', 'Member', 'godfather', 1, NULL),
+	(38, 'shooter', 'Shooter', 'godfather', 2, NULL),
+	(39, 'topshooter', 'Top Shooter', 'godfather', 3, NULL),
+	(40, 'owner', 'Owner', 'godfather', 4, NULL);
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

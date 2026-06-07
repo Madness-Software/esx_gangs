@@ -61,8 +61,9 @@ Config = {
                 ["supervolito2"] = 0,
             },
         },
-        
-        Zones = {
+    },
+
+    Zones = {
             ["methfarm"] = {
                 Location = {x = 126.135, y = -1278.583, z = 29.270},
                 Blip = {id = 42, color = 1},
@@ -177,5 +178,4 @@ Config = {
         WaitPeriod = 500,
         VehicleSpawnTimer = 0,
         ContestedColor = {r = 0, g = 0, b = 255},
-    }
 }
